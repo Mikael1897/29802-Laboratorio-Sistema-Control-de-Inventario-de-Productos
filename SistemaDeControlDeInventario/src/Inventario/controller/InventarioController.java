@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 /**
  * -------------------------------------------------------------------------
- * INTEGRANTE: Jaime (controller)
+ * INTEGRANTE: Jaime Hidalgo(controller)
  * PROYECTO: Sistema de Control de Inventario
  * DESCRIPCIÓN: Gestiona la lógica, valida datos y actualiza la tabla.
  * -------------------------------------------------------------------------
