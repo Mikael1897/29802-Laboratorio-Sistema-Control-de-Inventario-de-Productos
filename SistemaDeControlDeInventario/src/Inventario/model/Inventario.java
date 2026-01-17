@@ -1,15 +1,47 @@
-package inventario.modelo;
+package Inventario.model;
 
 import java.util.ArrayList;
 
+/**
+ * -------------------------------------------------------------------------
+ * INTEGRANTE: Sebastian (Team Inventario)
+ * CLASE: Inventario (Lógica de Negocio / Gestión de Colección)
+ * Esta clase encapsula el PROCESO DE GESTIÓN DE DATOS.
+ * Sebastian es responsable de las acciones de agregar, listar y calcular
+ * totales sobre la colección de productos.
+ * -------------------------------------------------------------------------
+ */
 public class Inventario {
-    private ArrayList<Producto> productos;
+    
+    // La lista se maneja aquí, no en el controlador
+    private ArrayList<Producto> listaProductos;
 
+    // Constructor: Inicializa la base de datos vacía
     public Inventario() {
-        this.productos = new ArrayList<>();
+        this.listaProductos = new ArrayList<>();
     }
 
-    public ArrayList<Producto> listar() {
-        return productos;
+    // ACCIÓN: Agregar un producto a la lista
+    public void agregarProducto(Producto p) {
+        listaProductos.add(p);
+    }
+
+    // ACCIÓN: Obtener la lista completa 
+    public ArrayList<Producto> obtenerTodos() {
+        return listaProductos;
+    }
+
+    // PROCESO: Calcular el dinero total en bodega 
+    public double calcularValorTotalBodega() {
+        double total = 0;
+        for (Producto p : listaProductos) {
+            total += p.getValorTotal();
+        }
+        return total;
+    }
+    
+    // Método para ver si está vacío
+    public boolean estaVacio() {
+        return listaProductos.isEmpty();
     }
 }
